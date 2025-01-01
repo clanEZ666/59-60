@@ -11,6 +11,8 @@ public class Main {
         lib.addBook(new Book(2,"War and Peace","Tolstoy",false));
         lib.addBook(new Book(3,"Java","JohnDoe",false));
         lib.addBook(new Book(4,"Revizor","Gogol",true));
+        lib.addBook(new Book(5,"Prorok","Pushkin",false));
+        lib.addBook(new Book(6,"Vii","Gogol",true));
 
 
 
@@ -38,6 +40,15 @@ public class Main {
 
         System.out.println("\nДоступные книги по автору: ");
         lib.getBooks(true, Comparator.comparing(Book::getAuthor)).forEach(System.out::println);
+
+
+        System.out.println("\nПолучение одной книги по id: " + lib.getBookById(3));
+
+
+
+
+
+
     }
 }
 
