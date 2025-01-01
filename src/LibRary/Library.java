@@ -74,4 +74,16 @@ public class Library {
                 .collect(Collectors.toList());
     }
 
+
+    public Map<Boolean, List<Book>> getBooksByAvailability() {
+        return books.values().stream()
+                .collect(Collectors.partitioningBy(Book::isAvailable));
+    }
+
+    public Map<String, List<Book>> getBooksGroupedByAuthor() {
+        return books.values().stream()
+                .collect(Collectors.groupingBy(Book::getAuthor));
+
+
+    }
 }
